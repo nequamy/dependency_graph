@@ -20,10 +20,12 @@ import os
 import sys
 import yaml
 from typing import Dict, Optional
-from include.dependency_graph_builder import DependencyGraphBuilder
-from include.project_analyzer import ProjectAnalyzer
-from include.project_detector import ProjectDetector
-from include.project_structure import ProjectStructure
+from core import (
+    DependencyGraphBuilder,
+    ProjectAnalyzer,
+    ProjectDetector,
+    ProjectStructure,
+)
 
 try:
     import graphviz
