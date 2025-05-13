@@ -12,7 +12,10 @@ requires-python = ">=3.10"
 dependencies = [
 ]
 
-package-mode = false
+[tool.poetry]
+packages = [
+    {include = "src"}
+]
 
 [project.scripts]
 deps_graph = "src.main:main"
