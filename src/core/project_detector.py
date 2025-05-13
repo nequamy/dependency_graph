@@ -1,4 +1,4 @@
-from project_structure import ProjectStructure
+from .project_structure import ProjectStructure
 import os
 import sys
 from typing import Optional

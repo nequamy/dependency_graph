@@ -1,10 +1,10 @@
 from typing import List, Dict, Set, Optional
 import os
 import ast
-from project_structure import ProjectStructure
-from python_module import PythonModule
-from import_visitor import ImportVisitor
-from dependency import Dependency
+from .project_structure import ProjectStructure
+from .python_module import PythonModule
+from .import_visitor import ImportVisitor
+from .dependency import Dependency
 import logging
 
 
@@ -146,7 +146,7 @@ class ProjectAnalyzer:
                     content = f.read()
 
                 tree = ast.parse(content, module.file_path)
-                visitor = ImportVisitor(module.module_name)
+                visitor = ImportVisitor(module.module_name, self.logger)
                 visitor.visit(tree)
 
                 module.imported_modules = visitor.imports

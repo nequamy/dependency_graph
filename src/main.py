@@ -20,7 +20,7 @@ import os
 import sys
 import yaml
 from typing import Dict, Optional
-from core import (
+from .core import (
     DependencyGraphBuilder,
     ProjectAnalyzer,
     ProjectDetector,
@@ -187,7 +187,7 @@ def main() -> None:
     )
 
     # Создание и запуск анализатора проекта
-    analyzer = ProjectAnalyzer(project_root, project_structure)
+    analyzer = ProjectAnalyzer(project_root, project_structure, logger)
     analyzer.load_modules()
     analyzer.analyze_imports()
 
@@ -210,7 +210,7 @@ def main() -> None:
     else:
         # Создание и отрисовка графа зависимостей
         graph_builder = DependencyGraphBuilder(
-            analyzer, reverse_arrows=not args.normal_arrows
+            analyzer, reverse_arrows=not args.normal_arrows, logger=logger
         )
         graph = graph_builder.build_graph()
         graph.engine = args.engine  # Устанавливаем выбранный движок

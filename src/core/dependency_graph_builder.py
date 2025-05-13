@@ -1,7 +1,7 @@
 import graphviz
 import logging
-from project_analyzer import ProjectAnalyzer
-from project_structure import ProjectStructure
+from .project_analyzer import ProjectAnalyzer
+from .project_structure import ProjectStructure
 
 
 class DependencyGraphBuilder:

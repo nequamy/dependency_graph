@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from python_module import PythonModule
+from .python_module import PythonModule
 from typing import List
 
 
